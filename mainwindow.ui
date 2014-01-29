@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WebPhonon</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons.qrc">
+    <normaloff>:/Icons/WebPhononIcon.png</normaloff>:/Icons/WebPhononIcon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>&amp;launch</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidget"/>
+    </item>
+    <item row="2" column="0">
+     <layout class="QGridLayout" name="gridLayout"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="Phonon::VolumeSlider" name="volumeSlider">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="Phonon::SeekSlider" name="seekSlider"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>703</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>&amp;Open</string>
+     </property>
+     <addaction name="actionLocal_File"/>
+     <addaction name="actionHttp_Stream"/>
+     <addaction name="actionFrom_Database"/>
+    </widget>
+    <addaction name="menuOpen"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuPlayer">
+    <property name="title">
+     <string>&amp;Player</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionStop"/>
+    <addaction name="actionFull_Screen"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionFoward"/>
+   </widget>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>&amp;Database</string>
+    </property>
+    <addaction name="actionSet_Database"/>
+    <addaction name="actionManage_Databases"/>
+    <addaction name="actionHide_Table"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAvailable_Formats"/>
+    <addaction name="actionUser_Manual"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPlayer"/>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionLocal_File"/>
+   <addaction name="actionHttp_Stream"/>
+   <addaction name="actionFrom_Database"/>
+   <addaction name="separator"/>
+   <addaction name="actionBack"/>
+   <addaction name="actionPlay"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionStop"/>
+   <addaction name="actionFoward"/>
+   <addaction name="actionFull_Screen"/>
+   <addaction name="actionSet_Database"/>
+   <addaction name="actionHide_Table"/>
+   <addaction name="actionManage_Databases"/>
+   <addaction name="actionExit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLocal_File">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/document-open.png</normaloff>:/Icons/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Local File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionHttp_Stream">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/applications-internet.png</normaloff>:/Icons/applications-internet.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Http Stream</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-playback-start.png</normaloff>:/Icons/media-playback-start.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Play</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-playback-pause.png</normaloff>:/Icons/media-playback-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-playback-stop.png</normaloff>:/Icons/media-playback-stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Stop</string>
+   </property>
+  </action>
+  <action name="actionFull_Screen">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/video-television.png</normaloff>:/Icons/video-television.png</iconset>
+   </property>
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/application-exit.png</normaloff>:/Icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSet_Database">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/document-export-table.png</normaloff>:/Icons/document-export-table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Database</string>
+   </property>
+  </action>
+  <action name="actionFrom_Database">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/application-vnd.oasis.opendocument.database.png</normaloff>:/Icons/application-vnd.oasis.opendocument.database.png</iconset>
+   </property>
+   <property name="text">
+    <string>From &amp;Database</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionManage_Databases">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/server-database.png</normaloff>:/Icons/server-database.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manage Databases</string>
+   </property>
+  </action>
+  <action name="actionHide_Table">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/view-close.png</normaloff>:/Icons/view-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hide Table</string>
+   </property>
+  </action>
+  <action name="actionAvailable_Formats">
+   <property name="text">
+    <string>Available Formats</string>
+   </property>
+  </action>
+  <action name="actionUser_Manual">
+   <property name="text">
+    <string>User Manual</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-skip-backward.png</normaloff>:/Icons/media-skip-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Previous</string>
+   </property>
+  </action>
+  <action name="actionFoward">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-skip-forward.png</normaloff>:/Icons/media-skip-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Foward</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Next</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Phonon::SeekSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/seekslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Phonon::VolumeSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/volumeslider.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

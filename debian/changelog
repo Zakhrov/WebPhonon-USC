@@ -1,0 +1,5 @@
+webphonon (1.5-5) Precise; urgency=low
+
+    * Transition to CMake
+
+ -- Aaron Zakhrov <aaron.zakhrov@gmail.com>  Fri, 29 Jan 2014 15:07:00 +0530
